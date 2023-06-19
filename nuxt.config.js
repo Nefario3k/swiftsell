@@ -15,12 +15,18 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'apple-touch-icon', sizes: "180x180", href: '/apple-touch-icon.png' },
+      { rel: 'icon', type: 'image/png', sizes: "32x32", href: '/favicon-32x32.png' },
+      { rel: 'icon', type: 'image/png', sizes: "16x16", href: '/favicon-16x16.png' },
+      { rel: 'manifest', href: '/site.webmanifest' },
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/static/css/main.scss',
+    '~/static/css/responsive.scss',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -59,7 +65,7 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,
