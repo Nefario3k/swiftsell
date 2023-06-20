@@ -1,9 +1,16 @@
 <template>
-  <div>qsqws</div>
+  <div>
+    <div>wwwwwwwwwwwwwwwwww</div>
+    <Faq />
+    <Potential />
+  </div>
 </template>
 
 <script>
-export default {};
+import Potential from "~/components/Potential.vue";
+export default {
+  components: { Potential },
+};
 </script>
 
 <style lang="scss" scoped>

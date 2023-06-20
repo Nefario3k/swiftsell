@@ -1,9 +1,21 @@
 // variables
-$primaryColor: #4169e1;
-$secondaryColor: #00234c;
-
 :root {
   font-size: 62.5%;
+
+  // main colors
+  --bodyColor: #f3f6ff;
+  --primaryColor: #4169e1;
+  --secondaryColor: #00234c;
+  --navLink: #393939;
+
+  // text colors
+  --textColor1: #e6eef8;
+  --textColor2: #8ab0dd;
+  --textColor3: #0053b4;
+  --textColor4: #003b80;
+
+  // other color
+  --cardColor1: #fbfbfb;
 }
 
 @font-face {
@@ -22,12 +34,12 @@ $secondaryColor: #00234c;
 }
 
 * {
-  font-family: s;
   font-family: "regular", Helvetica, sans-serif;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   object-fit: contain;
+  transition: all 0.3s ease-in-out;
 }
 
 html {
@@ -36,8 +48,16 @@ html {
 
 body {
   font-size: 1.6rem;
-  background-color: #fff;
+  background-color: var(--bodyColor);
   padding: 0 !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  outline: none !important;
 }
 
 /* nav styles  */
@@ -50,5 +70,254 @@ body {
     justify-content: space-between;
     grid-gap: 10px;
     padding: 0;
+    .flexGap {
+      img {
+        height: 2.4rem;
+        height: 2.4rem;
+        object-fit: cover;
+      }
+      & > span {
+        color: var(--secondaryColor);
+        font-weight: 700;
+        font-size: 2.2rem;
+        text-transform: capitalize;
+      }
+      & > .Btn {
+        border-radius: 8px;
+        font-weight: 500;
+        text-transform: initial;
+        font-size: 1.4rem;
+        color: #fff;
+        &.Btn__outlined {
+          span {
+            color: var(--primaryColor) !important;
+          }
+          // margin-right: 6px;
+        }
+      }
+    }
+    nav {
+      &,
+      ul,
+      li {
+        padding: 0 !important;
+      }
+      ul {
+        justify-content: space-between;
+        grid-gap: 32px;
+        li {
+          list-style-type: none;
+          a {
+            color: var(--navLink);
+            font-weight: 600;
+            font-size: 1.6rem;
+            &:is(:hover, :focus) {
+              color: var(--primaryColor);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// reusable styles
+.flexGap {
+  display: flex;
+  align-items: center;
+  grid-gap: 10px;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+// section styles
+section {
+  &.hero {
+    min-height: 72.9rem;
+    // background
+  }
+  // faq styles
+  &.faq {
+    margin-block: 122px 32px;
+    .contentWrapper {
+      background-color: var(--cardColor1);
+      border-radius: 16px;
+      padding: 47px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      & > div {
+        max-width: 61.3rem;
+        margin: 0 auto;
+      }
+      h2 {
+        font-family: "bold", Helvetica, sans-serif;
+        text-align: center;
+        color: var(--secondaryColor);
+        font-weight: 700;
+        font-size: 4.8rem;
+        margin-bottom: 36px;
+      }
+      .expandedContent {
+        font-weight: 400;
+        font-size: 1.4rem;
+        color: var(--textColor4);
+      }
+
+      .v-expansion-panel-header {
+        font-size: 1.8rem !important;
+        color: var(--secondaryColor);
+        font-weight: 400;
+        &:hover {
+          color: var(--primaryColor);
+        }
+        &::first-letter {
+          text-transform: uppercase;
+        }
+      }
+
+      .theme--light.v-expansion-panels .v-expansion-panel {
+        margin-top: 1.6rem;
+        background: var(--textColor1);
+        border: none;
+        border-radius: 8px;
+        &:first-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+  // potential styles
+  &.potential {
+    margin-bottom: -60px;
+    .contentWrapper {
+      min-height: 31.6rem;
+      background-color: var(--primaryColor);
+      background-image: url("/svg/potential_left.svg"),
+        url("/svg/potential_right.svg");
+      background-position: left center, right center;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 32px;
+      padding: 12px;
+      color: var(--textColor1);
+      & > div {
+        max-width: 49.3rem;
+        margin: 0 auto;
+        text-align: center;
+      }
+      h3 {
+        font-family: "bold", Helvetica, sans-serif;
+        font-weight: 700;
+        font-size: 2.8rem;
+        margin-bottom: 16px;
+      }
+      p {
+        font-size: 1.4rem;
+        margin-bottom: 32px;
+      }
+      .Btn {
+        border-radius: 8px;
+        text-transform: capitalize;
+        & > span {
+          color: var(--textColor3);
+          font-weight: 600;
+          font-size: 1.4rem;
+          display: flex;
+          align-items: center;
+          grid-gap: 16px;
+        }
+        &:is(:hover, :focus) {
+          svg {
+            transform: translateX(5px);
+          }
+        }
+      }
+    }
+  }
+
+  // footer
+  &.footerSection {
+    // height: min(46.4rem, 100%);
+    background-color: var(--secondaryColor);
+    color: #fff;
+    padding-block: 120px;
+    & > div {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+    .footerLogo {
+      .flexGap {
+        margin-bottom: 3px;
+        img {
+          height: 2.4rem;
+          height: 2.4rem;
+          object-fit: cover;
+        }
+        & > span {
+          color: var(--textColor1);
+          font-weight: 700;
+          font-size: 2.2rem;
+          text-transform: capitalize;
+        }
+      }
+      & > p {
+        margin: 0;
+        color: var(--textColor2);
+        font-size: 1.2rem;
+        font-weight: 400;
+        max-width: 25.5rem;
+      }
+    }
+    .footerContent {
+      ul,
+      li {
+        padding: 0;
+      }
+      ul {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 8px;
+        li {
+          list-style-type: none;
+          &:first-child {
+            margin-bottom: 16px;
+            span {
+              color: var(--textColor2);
+              font-size: 1.4rem;
+            }
+          }
+          span {
+            font-size: 1.4rem;
+          }
+          a {
+            font-size: 1.4rem;
+            color: #fff;
+            outline: none !important;
+            &:is(:hover, :focus) {
+              color: var(--primaryColor);
+              svg {
+                path {
+                  fill: var(--primaryColor);
+                }
+              }
+            }
+          }
+          &.footerSocial {
+            margin-top: 8px;
+            grid-gap: 9px;
+          }
+        }
+      }
+    }
   }
 }
