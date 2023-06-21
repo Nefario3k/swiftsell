@@ -1,5 +1,5 @@
 <template>
-  <section class="potential relative">
+  <section id="potential" class="potential relative">
     <v-container>
       <div class="contentWrapper">
         <div>
@@ -8,7 +8,15 @@
             Empower your business with SwiftSell and take control of your
             success.
           </p>
-          <v-btn color="#fff" height="48" width="169" elevation="0" class="Btn">
+          <v-btn
+            data-aos="zoom-in"
+            data-aos-duration="800"
+            color="#fff"
+            height="48"
+            width="169"
+            elevation="0"
+            class="Btn"
+          >
             <span>Get Started</span>
             <svg
               width="16"

@@ -1,5 +1,5 @@
 <template>
-  <section class="footerSection">
+  <section id="footer" class="footerSection">
     <v-container>
       <v-row>
         <div class="col-12 col-sm-4">

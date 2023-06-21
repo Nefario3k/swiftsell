@@ -1,8 +1,7 @@
 <template>
   <section class="pageContent">
-    <Hero />
-    <Product />
-    <Benefits />
+    <AboutHero />
+    <Overview />
     <Pricing />
     <Faq />
     <Potential />

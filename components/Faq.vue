@@ -1,16 +1,16 @@
 <template>
-  <section class="faq">
+  <section id="faq" class="faq">
     <v-container>
       <div class="contentWrapper">
         <div>
-          <h2>FAQs</h2>
+          <h2 data-aos="fade-up" data-aos-duration="400">FAQs</h2>
           <div class="expansionsWrapper">
             <v-expansion-panels flat v-model="panels">
               <v-expansion-panel v-for="n in 5" :key="n" class="panel-item">
                 <v-expansion-panel-header
                   :expand-icon="
                     panelExpanded && currentPanel === n
-                      ? 'mdi-minus'
+                      ? 'mdi-close'
                       : 'mdi-plus'
                   "
                   @click="toggleExpand(n)"

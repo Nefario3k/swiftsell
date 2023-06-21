@@ -15,11 +15,26 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
+      { rel: 'icon', href: 'https://unpkg.com/aos@next/dist/aos.css' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'apple-touch-icon', sizes: "180x180", href: '/apple-touch-icon.png' },
       { rel: 'icon', type: 'image/png', sizes: "32x32", href: '/favicon-32x32.png' },
       { rel: 'icon', type: 'image/png', sizes: "16x16", href: '/favicon-16x16.png' },
       { rel: 'manifest', href: '/site.webmanifest' },
+    ],
+    script: [
+      {
+        src: "https://unpkg.com/aos@next/dist/aos.js",
+        type: "text/javascript",
+        body: true,
+        defer: false,
+      },
+      {
+        src: "/scripts/jquery-3.3.1.min.js",
+        type: "text/javascript",
+        body: true,
+        defer: true,
+      },
     ]
   },
 
