@@ -30,6 +30,11 @@
 }
 
 @font-face {
+  font-family: "light";
+  src: url(../fonts/poppins/Poppins-Light.ttf);
+}
+
+@font-face {
   font-family: "regular";
   src: url(../fonts/poppins/Poppins-Regular.ttf);
 }
@@ -241,6 +246,7 @@ section {
           z-index: 1;
         }
         p {
+          font-family: "light", Helvetica, sans-serif;
           font-weight: 400;
           &.highlight {
             font-size: 1.2rem;
@@ -251,6 +257,7 @@ section {
             font-size: 2.2rem;
             color: var(--secondaryColor);
             margin-bottom: 32px;
+            line-height: 33px;
           }
         }
         h1 {
@@ -295,16 +302,9 @@ section {
           backdrop-filter: blur(65px);
         }
         &.aboutAside {
-          border-radius: 0;
-          text-align: center;
-          max-width: 87rem;
-          margin: 0 auto;
           h1 {
             font-size: 4.8rem;
             line-height: 72px;
-          }
-          &::before {
-            display: none;
           }
         }
       }
@@ -328,6 +328,12 @@ section {
             max-width: 56rem;
             display: block;
             margin: 0 auto;
+            border-radius: 8px;
+          }
+        }
+        &.aboutImgContainer {
+          img {
+            border-radius: 24px;
           }
         }
       }
@@ -407,6 +413,10 @@ section {
       display: flex;
       align-items: center;
       justify-content: center;
+      & > div {
+        width: 112.2rem;
+        margin: 0 auto;
+      }
       header {
         max-width: 73.6rem;
         margin: 0 auto 93px;
@@ -425,7 +435,6 @@ section {
       }
       .content__tab__items {
         display: flex;
-        width: 100%;
         height: 53.7rem;
         border-radius: 8px;
         & > * {
@@ -446,7 +455,7 @@ section {
             img {
               width: 100%;
               height: 100%;
-              object-fit: contain;
+              object-fit: cover;
               // aspect-ratio: 1/1;
               &.back {
                 max-width: 48.5rem;
@@ -979,6 +988,22 @@ section {
 }
 
 // key frames
+.left {
+  animation: transleft 0.5s ease-out 0s;
+}
+
+.right {
+  animation: transright 0.5s ease-out 0s;
+}
+
+.transOut {
+  animation: transOut 0.5s ease-out 0s;
+}
+
+.transIn {
+  animation: transIn 0.5s ease-out 0s;
+}
+
 @keyframes transIn {
   from {
     opacity: 0;
@@ -989,4 +1014,63 @@ section {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes transOut {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes transleft {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes transright {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// scroll styles
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: none;
+  background: var(--secondaryColor);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--primaryColor);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primaryColor);
 }

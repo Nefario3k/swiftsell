@@ -3,7 +3,7 @@
     <v-container>
       <v-row class="contentRow">
         <!-- text  -->
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6 left">
           <aside>
             <p class="highlight">
               Unlock the potential of your business with SwiftSell
@@ -47,15 +47,15 @@
           </aside>
         </div>
         <!-- image  -->
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6 right">
           <div class="imgContainer">
             <div>
-              <img src="/image/benefit1.png" alt="Hero" />
+              <img src="/image/hero.png" alt="Hero" />
             </div>
           </div>
         </div>
         <!-- stats  -->
-        <div class="col-12 d-none d-md-block">
+        <div class="col-12 d-none d-md-block transIn">
           <div class="stats">
             <div class="flexGap">
               <div class="d-flex align-center justify-center h-100">

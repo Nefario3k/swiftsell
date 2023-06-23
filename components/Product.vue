@@ -21,16 +21,21 @@
                 style="width: 100%; background: transparent"
                 v-model="tab"
               >
-                <v-tab-item class="" v-for="n in 3" :key="n + 222111">
+                <v-tab-item
+                  style="min-height: 30rem"
+                  class=""
+                  v-for="(item, id) in products"
+                  :key="id + 222111"
+                >
                   <div class="relative">
                     <img
                       class="back"
-                      src="/image/benefit1.png"
+                      :src="`/image/benefit/${item.desktopImg}.png`"
                       alt="benefit1"
                     />
                     <img
                       class="ontop absolute"
-                      src="/image/benefit2.png"
+                      :src="`/image/benefit/${item.mobileImg}.png`"
                       alt="benefit2"
                     />
                   </div>
@@ -42,7 +47,7 @@
                 style="width: 100%; background: transparent"
                 v-model="tab"
               >
-                <v-tab-item v-for="n in 3" :key="n + 22211112">
+                <v-tab-item v-for="(item, id) in products" :key="id + 22211112">
                   <div>
                     <!-- title  -->
                     <div class="flexGap">
@@ -78,11 +83,14 @@
                           />
                         </svg>
                       </div>
-                      <h3>Inventory Management</h3>
+                      <h3>{{ item.title }}</h3>
                     </div>
                     <!-- list  -->
                     <ul>
-                      <li v-for="(items, index) in products" :key="index + 231">
+                      <li
+                        v-for="(items, index) in item.list"
+                        :key="index + 231"
+                      >
                         <div class="d-flex align-center">
                           <svg
                             width="24"
@@ -233,11 +241,41 @@ export default {
     return {
       tab: 0,
       products: [
-        "Easily create and manage your product catalog",
-        "Track stock levels and receive notifications for low inventory",
-        "Set up automatic reordering for efficient inventory management",
-        "Generate reports on product sales, stock movements, and profitability",
-        "Implement barcode scanning for faster inventory tracking",
+        {
+          title: "Inventory Management",
+          desktopImg: 1,
+          mobileImg: 2,
+          list: [
+            "Easily create and manage your product catalog",
+            "Track stock levels and receive notifications for low inventory",
+            "Set up automatic reordering for efficient inventory management",
+            "Generate reports on product sales, stock movements, and profitability",
+            "Implement barcode scanning for faster inventory tracking",
+          ],
+        },
+        {
+          title: "Point of Sales",
+          desktopImg: 3,
+          mobileImg: 4,
+          list: [
+            "Process sales transactions quickly and efficiently",
+            "Accept various payment methods, including cash, and card",
+            "Generate itemized receipts for customers",
+            "Apply discounts and promotions to transactions",
+            "Keep track of sales data and analytics for better decision-making",
+          ],
+        },
+        {
+          title: "Staff Management",
+          desktopImg: 5,
+          mobileImg: 6,
+          list: [
+            "Create and manage staff profiles, including their personal information and roles",
+            "Assign access levels and permissions to control staff access to system features",
+            "Track staff attendance and working hours",
+            "Generate payroll reports and calculate staff earnings",
+          ],
+        },
       ],
     };
   },
