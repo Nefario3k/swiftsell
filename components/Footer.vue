@@ -34,7 +34,7 @@
                 <span>Legal</span>
               </li>
               <li>
-                <a href="#">Privacy Policy</a>
+                <nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link>
               </li>
               <li>
                 <a href="#">Terms and Conditions</a>
